@@ -1,0 +1,340 @@
+/* ==========================================
+   SECCIÓN DE DESTINOS DESTACADOS
+   ========================================== */
+
+.destinations {
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.destinations-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Títulos de la sección */
+.destinations-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  color: #333;
+  margin-bottom: 1rem;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+.destinations-subtitle {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* ==========================================
+   GRID DE TARJETAS
+   ========================================== */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  animation: fadeIn 1s ease-out 0.4s both;
+}
+
+/* ==========================================
+   ESTILOS DE TARJETAS (CARDS)
+   ========================================== */
+
+.card {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* Imagen de la tarjeta */
+.card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: transform 0.6s ease-out;
+}
+
+.card:hover .card-image {
+  transform: scale(1.1);
+}
+
+/* ==========================================
+   IMÁGENES ESPECÍFICAS DE CADA DESTINO
+   ========================================== */
+
+.card-jujuy .card-image {
+  background-image:
+    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    url("assets/images/jujuy.jpg");
+  background-attachment: fixed;
+}
+
+.card-salta .card-image {
+  background-image:
+    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    url("assets/images/salta.jpg");
+  background-attachment: fixed;
+}
+
+.card-tucuman .card-image {
+  background-image:
+    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    url("assets/images/tucuman.jpg");
+  background-attachment: fixed;
+}
+
+.card-iguazu .card-image {
+  background-image:
+    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    url("assets/images/iguazu.jpg");
+  background-attachment: fixed;
+}
+
+.card-mendoza .card-image {
+  background-image:
+    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    url("assets/images/mendoza.jpg");
+  background-attachment: fixed;
+}
+
+.card-bariloche .card-image {
+  background-image:
+    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    url("assets/images/bariloche.jpg");
+  background-attachment: fixed;
+}
+
+/* Overlay oscuro */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 2;
+  transition: all 0.4s ease-out;
+}
+
+.card:hover .card-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+/* Contenido de la tarjeta */
+.card-content {
+  position: relative;
+  z-index: 3;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  color: white;
+  transition: all 0.4s ease-out;
+  transform: translateY(30px);
+  opacity: 0.8;
+}
+
+.card:hover .card-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Título de la tarjeta */
+.card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  transition: all 0.3s ease-out;
+  letter-spacing: 1px;
+}
+
+.card:hover .card-title {
+  color: #4fc3f7;
+  text-shadow: 0 2px 10px rgba(79, 195, 247, 0.5);
+}
+
+/* Descripción */
+.card-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.95;
+  transition: all 0.3s ease-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.card:hover .card-description {
+  max-height: 200px;
+  animation: slideIn 0.4s ease-out 0.1s both;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
+}
+
+/* Botón de la tarjeta */
+.card-btn {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.card:hover .card-btn {
+  max-height: 50px;
+  padding: 0.8rem 1.5rem;
+  animation: slideUp 0.4s ease-out 0.2s both;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+.card-btn:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   ANIMACIONES GENERALES
+   ========================================== */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==========================================
+   EFECTOS DE ENTRADA EN TARJETAS
+   ========================================== */
+
+.card {
+  animation: cardIn 0.6s ease-out both;
+}
+
+.card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
