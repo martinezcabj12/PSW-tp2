@@ -1,0 +1,183 @@
+/* ==========================================
+   FOOTER COMPONENT
+   Pie de página con suscripción, redes sociales y mapa
+   ========================================== */
+
+@import url("../base/variables.css");
+
+/* ========== CONTENEDOR PRINCIPAL DEL FOOTER ========== */
+footer {
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+}
+
+.footer-container {
+  max-width: var(--max-width-container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* ========== SECCIÓN NEWSLETTER ========== */
+.footer-section-newsletter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.footer-newsletter-title {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-newsletter-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-gradient);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ========== FORMULARIO NEWSLETTER ========== */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.newsletter-form input {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: var(--border-width) solid var(--color-accent);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-white);
+  color: var(--color-dark);
+  font-size: var(--font-size-base);
+  box-shadow: var(--shadow-light);
+}
+
+.newsletter-form input::placeholder {
+  color: var(--color-gray);
+}
+
+.newsletter-form button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-base);
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: var(--shadow-primary);
+  transition: var(--transition-all);
+}
+
+.newsletter-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-primary-lg);
+}
+
+/* ========== SECCIÓN REDES SOCIALES ========== */
+.footer-section-social {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.footer-social-title {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.social-links {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: var(--border-radius-sm);
+  text-decoration: none;
+  font-size: var(--font-size-lg);
+  transition: var(--transition-all);
+  box-shadow: var(--shadow-light);
+}
+
+.social-link:hover {
+  background: var(--color-accent);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+.social-link-text {
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-xs);
+}
+
+/* ========== SECCIÓN MAPA ========== */
+.footer-section-map {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.footer-map-title {
+  font-size: var(--font-size-xl);
+  font-weight: bold;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.map-container {
+  width: 100%;
+  height: 250px;
+  border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ========== FOOTER BOTTOM - PIE ========== */
+.footer-bottom {
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-lg);
+  border-top: var(--border-width) solid var(--color-white-transparent-2);
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-gradient);
+  margin: 0;
+}
+
+.footer-copyright strong {
+  color: var(--color-accent);
+}
+
+/* ========== SEPARADORES DENTRO DEL FOOTER ========== */
+.footer-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-white-transparent-1);
+  margin: var(--spacing-lg) 0;
+}
