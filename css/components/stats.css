@@ -2,15 +2,11 @@
 
 /* ==========================================
    SECCIÓN DE CONTADORES ANIMADOS
-   Versión optimizada con CSS Variables centralizadas
-   ========================================== */
-
-/* ==========================================
-   SECCIÓN PRINCIPAL
+   Versión optimizada con CSS Variables
    ========================================== */
 
 .stats {
-  padding: var(--spacing-2xl) var(--spacing-md);
+  padding: 6rem 2rem;
   background: var(--gradient-primary);
   min-height: 80vh;
   display: flex;
@@ -26,11 +22,11 @@
   position: absolute;
   background: radial-gradient(
     circle,
-    var(--color-white-transparent-05) 0%,
+    rgba(255, 255, 255, 0.05) 0%,
     transparent 70%
   );
   border-radius: 50%;
-  animation: float 20s var(--easing-ease-in-out) infinite;
+  animation: float 20s ease-in-out infinite;
   z-index: 0;
 }
 
@@ -55,14 +51,14 @@
    ========================================== */
 
 .stats-container {
-  max-width: var(--max-width-container);
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: var(--size-card-gap);
+  gap: 2rem;
   position: relative;
-  z-index: var(--z-content);
+  z-index: 1;
 }
 
 /* ==========================================
@@ -70,40 +66,37 @@
    ========================================== */
 
 .stat-card {
-  background: var(--color-white-transparent);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: var(--size-border-width) solid var(--color-white-transparent-2);
-  border-radius: var(--size-border-radius);
-  padding: var(--size-card-padding);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
   text-align: center;
-  transition: all var(--timing-transition) var(--easing-default);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  animation: slideInUp var(--timing-animation) var(--easing-ease-out) both;
+  animation: slideInUp 0.8s ease-out both;
 }
 
 .stat-card:nth-child(1) {
-  animation-delay: var(--timing-delay-1);
+  animation-delay: 0.1s;
 }
-
 .stat-card:nth-child(2) {
-  animation-delay: var(--timing-delay-2);
+  animation-delay: 0.2s;
 }
-
 .stat-card:nth-child(3) {
-  animation-delay: var(--timing-delay-3);
+  animation-delay: 0.3s;
 }
-
 .stat-card:nth-child(4) {
-  animation-delay: var(--timing-delay-4);
+  animation-delay: 0.4s;
 }
 
 .stat-card:hover {
-  background: var(--color-white-transparent-15);
-  border-color: var(--color-white-transparent-2);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-10px);
-  box-shadow: 0 var(--size-shadow-blur-lg) 40px var(--color-black-transparent-2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
 
 /* Línea superior animada */
@@ -121,7 +114,7 @@
     transparent
   );
   transform: translateX(-100%);
-  transition: transform var(--timing-card-transform) var(--easing-ease-in-out);
+  transition: transform 0.6s ease;
 }
 
 .stat-card:hover::before {
@@ -137,7 +130,7 @@
   width: 0;
   height: 2px;
   background: linear-gradient(90deg, var(--color-accent), transparent);
-  transition: width var(--timing-card-transform) var(--easing-ease-in-out);
+  transition: width 0.6s ease;
 }
 
 .stat-card:hover::after {
@@ -153,55 +146,54 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 1.5rem;
 }
 
 .counter-container {
   font-size: 4rem;
   font-weight: 800;
   color: var(--color-white);
-  line-height: var(--size-card-height);
-  text-shadow: 0 4px var(--size-shadow-blur) var(--color-black-transparent-3);
+  line-height: 4rem;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: inline-block;
-  height: var(--size-card-height);
+  height: 4rem;
   overflow: hidden;
   position: relative;
   vertical-align: middle;
-  animation: counterGlow 3.5s var(--easing-ease-out) var(--timing-delay-count)
-    infinite;
+  animation: counterGlow 3.5s ease-out 0.5s infinite;
 }
 
 .counter-roll {
   display: flex;
   flex-direction: column;
   will-change: transform;
-  animation-timing-function: var(--easing-ease-out);
+  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
-  animation-delay: var(--timing-delay-count);
+  animation-delay: 0.5s;
 }
 
 .counter-roll span {
   display: block;
-  height: var(--size-card-height);
-  line-height: var(--size-card-height);
+  height: 4rem;
+  line-height: 4rem;
   width: 100%;
 }
 
 /* Animaciones específicas por contador */
 .stat-card:nth-child(1) .counter-roll {
-  animation: countUp500 var(--timing-count) var(--easing-ease-out) both;
+  animation: countUp500 3s ease-out both;
 }
 
 .stat-card:nth-child(2) .counter-roll {
-  animation: countUp1000 var(--timing-count) var(--easing-ease-out) both;
+  animation: countUp1000 3s ease-out both;
 }
 
 .stat-card:nth-child(3) .counter-roll {
-  animation: countUp25 var(--timing-count-short) var(--easing-ease-out) both;
+  animation: countUp25 2s ease-out both;
 }
 
 .stat-card:nth-child(4) .counter-roll {
-  animation: countUp15 var(--timing-count-shorter) var(--easing-ease-out) both;
+  animation: countUp15 1.5s ease-out both;
 }
 
 /* Sufijo */
@@ -209,13 +201,12 @@
   font-size: 2rem;
   color: var(--color-accent);
   font-weight: 700;
-  animation: suffixPulse 2s var(--easing-ease-in-out) infinite
-    var(--timing-delay-count);
+  animation: suffixPulse 2s ease-in-out infinite 0.5s;
   display: inline-block;
 }
 
 .stat-card:hover .counter-suffix {
-  animation: suffixBounce 0.5s var(--easing-ease-in-out);
+  animation: suffixBounce 0.5s ease-in-out;
 }
 
 /* ==========================================
@@ -223,13 +214,12 @@
    ========================================== */
 
 .stat-label {
-  font-size: var(--font-size-2xl);
+  font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-white);
-  margin: 0 0 var(--spacing-xs) 0;
-  transition: all var(--timing-hover) var(--easing-ease-in-out);
-  animation: labelSlideIn var(--timing-animation) var(--easing-ease-out) 0.3s
-    both;
+  margin: 0 0 0.5rem 0;
+  transition: all 0.3s ease;
+  animation: labelSlideIn 0.8s ease-out 0.3s both;
 }
 
 .stat-card:hover .stat-label {
@@ -238,13 +228,12 @@
 }
 
 .stat-description {
-  font-size: var(--font-size-sm);
-  color: var(--color-white-transparent-8-light);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
   margin: 0;
-  transition: all var(--timing-hover) var(--easing-ease-in-out);
+  transition: all 0.3s ease;
   opacity: 0.8;
-  animation: descriptionFade var(--timing-animation) var(--easing-ease-out) 0.4s
-    both;
+  animation: descriptionFade 0.8s ease-out 0.4s both;
 }
 
 .stat-card:hover .stat-description {
@@ -303,13 +292,13 @@
 
 @keyframes counterGlow {
   0% {
-    text-shadow: 0 4px var(--size-shadow-blur) var(--color-black-transparent-3);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
   50% {
-    text-shadow: 0 0 20px var(--color-accent-transparent-8);
+    text-shadow: 0 0 20px rgba(79, 195, 247, 0.8);
   }
   100% {
-    text-shadow: 0 4px var(--size-shadow-blur) var(--color-black-transparent-3);
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -317,12 +306,12 @@
   0%,
   100% {
     color: var(--color-accent);
-    text-shadow: 0 0 0px var(--color-accent-transparent);
+    text-shadow: 0 0 0px rgba(79, 195, 247, 0.5);
     transform: scale(1);
   }
   50% {
     color: var(--color-accent-light);
-    text-shadow: 0 0 15px var(--color-accent-transparent-8);
+    text-shadow: 0 0 15px rgba(79, 195, 247, 0.8);
     transform: scale(1.15);
   }
 }
@@ -389,15 +378,12 @@
   .stat-card:nth-child(1) .counter-roll {
     animation-name: countUp500-tablet;
   }
-
   .stat-card:nth-child(2) .counter-roll {
     animation-name: countUp1000-tablet;
   }
-
   .stat-card:nth-child(3) .counter-roll {
     animation-name: countUp25-tablet;
   }
-
   .stat-card:nth-child(4) .counter-roll {
     animation-name: countUp15-tablet;
   }
@@ -407,19 +393,16 @@
       transform: translateY(-21rem);
     }
   }
-
   @keyframes countUp1000-tablet {
     to {
       transform: translateY(-35rem);
     }
   }
-
   @keyframes countUp25-tablet {
     to {
       transform: translateY(-31.5rem);
     }
   }
-
   @keyframes countUp15-tablet {
     to {
       transform: translateY(-28rem);
@@ -429,17 +412,17 @@
 
 @media (max-width: 768px) {
   .stats {
-    padding: var(--spacing-md) var(--spacing-sm);
+    padding: 3rem 1rem;
     min-height: auto;
   }
 
   .stats-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
+    gap: 1.5rem;
   }
 
   .stat-card {
-    padding: var(--card-padding-mobile);
+    padding: 1.5rem 1rem;
   }
 
   .counter-container {
@@ -455,15 +438,12 @@
   .stat-card:nth-child(1) .counter-roll {
     animation-name: countUp500-mobile;
   }
-
   .stat-card:nth-child(2) .counter-roll {
     animation-name: countUp1000-mobile;
   }
-
   .stat-card:nth-child(3) .counter-roll {
     animation-name: countUp25-mobile;
   }
-
   .stat-card:nth-child(4) .counter-roll {
     animation-name: countUp15-mobile;
   }
@@ -473,19 +453,16 @@
       transform: translateY(-18rem);
     }
   }
-
   @keyframes countUp1000-mobile {
     to {
       transform: translateY(-30rem);
     }
   }
-
   @keyframes countUp25-mobile {
     to {
       transform: translateY(-27rem);
     }
   }
-
   @keyframes countUp15-mobile {
     to {
       transform: translateY(-24rem);
@@ -493,22 +470,21 @@
   }
 
   .stat-label {
-    font-size: var(--font-size-xl);
+    font-size: 1.2rem;
   }
-
   .counter-suffix {
-    font-size: var(--font-size-2xl);
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .stats {
-    padding: var(--spacing-lg) var(--spacing-xs);
+    padding: 2rem 0.75rem;
   }
 
   .stats-container {
     grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
+    gap: 1rem;
   }
 
   .stat-card {
@@ -528,15 +504,12 @@
   .stat-card:nth-child(1) .counter-roll {
     animation-name: countUp500-small;
   }
-
   .stat-card:nth-child(2) .counter-roll {
     animation-name: countUp1000-small;
   }
-
   .stat-card:nth-child(3) .counter-roll {
     animation-name: countUp25-small;
   }
-
   .stat-card:nth-child(4) .counter-roll {
     animation-name: countUp15-small;
   }
@@ -546,19 +519,16 @@
       transform: translateY(-15rem);
     }
   }
-
   @keyframes countUp1000-small {
     to {
       transform: translateY(-25rem);
     }
   }
-
   @keyframes countUp25-small {
     to {
       transform: translateY(-22.5rem);
     }
   }
-
   @keyframes countUp15-small {
     to {
       transform: translateY(-20rem);
@@ -566,15 +536,13 @@
   }
 
   .stat-label {
-    font-size: var(--font-size-base);
+    font-size: 1rem;
   }
-
   .counter-suffix {
-    font-size: var(--font-size-xl);
+    font-size: 1.2rem;
   }
-
   .stat-description {
-    font-size: var(--font-size-xs);
+    font-size: 0.8rem;
   }
 
   .stats::before,
@@ -602,15 +570,12 @@
   .stat-card:nth-child(1) .counter-roll {
     transform: translateY(-24rem) !important;
   }
-
   .stat-card:nth-child(2) .counter-roll {
     transform: translateY(-40rem) !important;
   }
-
   .stat-card:nth-child(3) .counter-roll {
     transform: translateY(-36rem) !important;
   }
-
   .stat-card:nth-child(4) .counter-roll {
     transform: translateY(-32rem) !important;
   }
