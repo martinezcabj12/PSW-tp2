@@ -1,8 +1,10 @@
+@import "../base/variables.css";
+
 /* Hero Section con Video de Fondo */
 .hero {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: var(--hero-height);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -28,19 +30,19 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 100%);
-  z-index: 2;
+  background: var(--overlay-hero);
+  z-index: var(--z-overlay);
 }
 
 /* Contenedor del contenido */
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: var(--z-content);
   text-align: center;
-  color: white;
+  color: var(--color-white);
   max-width: 800px;
-  padding: 2rem;
-  animation: fadeInUp 1s ease-out;
+  padding: var(--spacing-md);
+  animation: fadeInUp var(--timing-animation-slow) ease-out;
 }
 
 /* Animación de entrada */
@@ -57,12 +59,12 @@
 
 /* Título principal */
 .hero-title {
-  font-size: 4rem;
+  font-size: var(--font-size-5xl);
   font-weight: 700;
-  margin: 0 0 1rem 0;
+  margin: 0 0 var(--spacing-sm) 0;
   line-height: 1.2;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  animation: slideInDown 0.8s ease-out;
+  text-shadow: 0 4px 8px var(--color-black-transparent-5);
+  animation: slideInDown var(--timing-animation) ease-out;
 }
 
 @keyframes slideInDown {
@@ -78,11 +80,12 @@
 
 /* Subtítulo */
 .hero-subtitle {
-  font-size: 1.5rem;
+  font-size: var(--font-size-2xl);
   font-weight: 300;
-  margin: 0 0 2rem 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-  animation: slideInUp 1s ease-out 0.2s both;
+  margin: 0 0 var(--spacing-lg) 0;
+  text-shadow: 0 2px 4px var(--color-black-transparent-5);
+  animation: slideInUp var(--timing-animation-slow) ease-out
+    var(--timing-delay-2) both;
 }
 
 @keyframes slideInUp {
@@ -100,23 +103,24 @@
 .hero-btn {
   display: inline-block;
   padding: 15px 40px;
-  font-size: 1.1rem;
+  font-size: var(--font-size-lg);
   font-weight: 600;
-  color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--color-white);
+  background: var(--gradient-primary);
   border: none;
-  border-radius: 50px;
+  border-radius: var(--border-radius-lg);
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-  animation: slideInUp 1s ease-out 0.4s both;
+  transition: all var(--timing-hover) ease;
+  box-shadow: var(--shadow-primary);
+  animation: slideInUp var(--timing-animation-slow) ease-out
+    var(--timing-delay-4) both;
 }
 
 .hero-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(102, 126, 234, 0.6);
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  box-shadow: var(--shadow-primary-lg);
+  background: var(--gradient-primary-reverse);
 }
 
 .hero-btn:active {
@@ -124,54 +128,79 @@
 }
 
 /* Responsive para tablets */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero {
-    height: 70vh;
+    height: var(--hero-height-tablet);
     min-height: 500px;
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: var(--font-size-4xl);
   }
 
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: var(--font-size-xl);
   }
 
   .hero-btn {
     padding: 12px 30px;
-    font-size: 1rem;
+    font-size: var(--font-size-base);
   }
 
   .hero-content {
-    padding: 1.5rem;
+    padding: var(--spacing-md);
   }
 }
 
 /* Responsive para móviles */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .hero {
-    height: 60vh;
+    height: var(--hero-height-mobile);
     min-height: 400px;
   }
 
   .hero-title {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
+    font-size: var(--font-size-4xl);
   }
 
   .hero-subtitle {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: var(--font-size-xl);
+  }
+
+  .hero-btn {
+    padding: 12px 30px;
+    font-size: var(--font-size-base);
+  }
+
+  .hero-content {
+    padding: var(--spacing-md);
+  }
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 480px) {
+  .hero {
+    height: var(--hero-height-mobile);
+    min-height: 400px;
+  }
+
+  .hero-title {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-md);
   }
 
   .hero-btn {
     padding: 10px 25px;
-    font-size: 0.95rem;
+    font-size: var(--font-size-sm);
   }
 
   .hero-content {
-    padding: 1rem;
+    padding: var(--spacing-sm);
   }
 
   .hero-video {
@@ -181,19 +210,19 @@
 
 /* Para navegadores que no soportan videos */
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-primary);
   z-index: 0;
   opacity: 0;
 }
 
 /* Efecto de pausa en hover del botón */
 .hero-btn:focus {
-  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline: 2px solid var(--color-white-transparent-3);
   outline-offset: 2px;
 }

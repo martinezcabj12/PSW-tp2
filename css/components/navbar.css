@@ -1,3 +1,5 @@
+@import "../base/variables.css";
+
 /* Estilos básicos de limpieza */
 .nav-links,
 .dropdown-menu {
@@ -8,13 +10,13 @@
 
 /* Estilo del header */
 header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-light);
   justify-content: center;
   position: sticky;
   top: 0;
-  height: 65;
-  z-index: 100;
+  height: var(--header-height);
+  z-index: var(--z-sticky);
 }
 
 /* Logo container mejorado */
@@ -25,28 +27,28 @@ header {
   gap: 0.75rem;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.5rem;
-  color: white;
+  font-size: var(--font-size-2xl);
+  color: var(--color-white);
   transition:
-    transform 0.3s ease,
-    text-shadow 0.3s ease;
+    transform var(--timing-hover) ease,
+    text-shadow var(--timing-hover) ease;
 }
 
 .logo-container:hover {
   transform: scale(1.05);
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 8px var(--color-white-transparent-3);
 }
 
 .logo {
   height: 35px;
   width: 35px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 2px 4px var(--color-black-transparent-1));
 }
 
 .logo-container p {
   margin: 0;
-  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  background: var(--gradient-text-white);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -58,7 +60,7 @@ header {
   justify-content: space-around;
   align-items: center;
   gap: 0;
-  padding: 0 40px;
+  padding: var(--header-padding);
   min-height: 70px;
   flex-wrap: wrap;
 }
@@ -74,11 +76,11 @@ header {
 .nav-links > li > a {
   display: block;
   padding: 20px 25px;
-  color: white;
+  color: var(--color-white);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.3s ease;
+  font-size: var(--font-size-base);
+  transition: all var(--timing-hover) ease;
   position: relative;
 }
 
@@ -89,10 +91,14 @@ header {
   left: 25px;
   right: 25px;
   height: 3px;
-  background: linear-gradient(90deg, #fff, #f0f0f0);
+  background: linear-gradient(
+    90deg,
+    var(--color-white),
+    var(--color-white-grad)
+  );
   transform: scaleX(0);
   transform-origin: right;
-  transition: transform 0.3s ease;
+  transition: transform var(--timing-hover) ease;
 }
 
 .nav-links > li > a:hover::after {
@@ -101,7 +107,7 @@ header {
 }
 
 .nav-links > li > a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-white-transparent-1);
   padding: 20px 25px;
 }
 
@@ -116,12 +122,12 @@ header {
   position: absolute;
   top: 93%;
   right: -8%;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-primary);
   min-width: 101px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  border-radius: 0 0 8px 8px;
+  box-shadow: 0 8px 24px var(--color-black-transparent-2);
+  border-radius: 0 0 var(--border-radius-dropdown) var(--border-radius-dropdown);
   overflow: hidden;
-  animation: slideDown 0.3s ease;
+  animation: slideDown var(--timing-hover) ease;
 }
 
 @keyframes slideDown {
@@ -140,19 +146,19 @@ header {
 }
 
 .dropdown-menu li a {
-  color: white;
+  color: var(--color-white);
   padding: 14px 20px;
   text-decoration: none;
   display: block;
-  transition: all 0.3s ease;
+  transition: all var(--timing-hover) ease;
   font-weight: 500;
   border-left: 3px solid transparent;
   list-style: none;
 }
 
 .dropdown-menu li a:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-left-color: #fff;
+  background-color: var(--color-white-transparent-15);
+  border-left-color: var(--color-white);
   padding-left: 25px;
 }
 

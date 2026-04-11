@@ -1,10 +1,12 @@
+@import "../base/variables.css";
+
 /* ==========================================
    SECCIÓN DE DESTINOS DESTACADOS
    ========================================== */
 
 .destinations {
-  padding: 6rem 2rem;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: var(--spacing-2xl) var(--spacing-md);
+  background: var(--gradient-light-bg);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -12,27 +14,28 @@
 }
 
 .destinations-container {
-  max-width: 1200px;
+  max-width: var(--max-width-container);
   width: 100%;
   margin: 0 auto;
 }
 
 /* Títulos de la sección */
 .destinations-title {
-  font-size: 3rem;
+  font-size: var(--font-size-5xl);
   font-weight: 700;
   text-align: center;
-  color: #333;
-  margin-bottom: 1rem;
-  animation: fadeInDown 0.8s ease-out;
+  color: var(--color-text-dark);
+  margin-bottom: var(--spacing-sm);
+  animation: fadeInDown var(--timing-animation) var(--easing-ease-out);
 }
 
 .destinations-subtitle {
-  font-size: 1.2rem;
+  font-size: var(--font-size-xl);
   text-align: center;
-  color: #666;
-  margin-bottom: 3rem;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
+  color: var(--color-text-gray);
+  margin-bottom: var(--spacing-xl);
+  animation: fadeInUp var(--timing-animation) var(--easing-ease-out)
+    var(--timing-delay-2) both;
 }
 
 /* ==========================================
@@ -42,8 +45,9 @@
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  animation: fadeIn 1s ease-out 0.4s both;
+  gap: var(--spacing-lg);
+  animation: fadeIn var(--timing-animation-slow) var(--easing-ease-out)
+    var(--timing-delay-4) both;
 }
 
 /* ==========================================
@@ -52,19 +56,19 @@
 
 .card {
   position: relative;
-  border-radius: 1rem;
+  border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: var(--shadow-medium);
+  transition: all var(--timing-card-hover) var(--easing-default);
   cursor: pointer;
-  height: 400px;
+  height: var(--card-height-lg);
   display: flex;
   flex-direction: column;
 }
 
 .card:hover {
   transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow-dark);
 }
 
 /* Imagen de la tarjeta */
@@ -77,7 +81,7 @@
   background-size: cover;
   background-position: center;
   z-index: 1;
-  transition: transform 0.6s ease-out;
+  transition: transform var(--timing-card-transform) var(--easing-ease-out);
 }
 
 .card:hover .card-image {
@@ -90,42 +94,66 @@
 
 .card-jujuy .card-image {
   background-image:
-    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    linear-gradient(
+      135deg,
+      var(--color-primary-overlay-light),
+      var(--color-primary-overlay-dark)
+    ),
     url("assets/images/jujuy.jpg");
   background-attachment: fixed;
 }
 
 .card-salta .card-image {
   background-image:
-    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    linear-gradient(
+      135deg,
+      var(--color-primary-overlay-light),
+      var(--color-primary-overlay-dark)
+    ),
     url("assets/images/salta.jpg");
   background-attachment: fixed;
 }
 
 .card-tucuman .card-image {
   background-image:
-    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    linear-gradient(
+      135deg,
+      var(--color-primary-overlay-light),
+      var(--color-primary-overlay-dark)
+    ),
     url("assets/images/tucuman.jpg");
   background-attachment: fixed;
 }
 
 .card-iguazu .card-image {
   background-image:
-    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    linear-gradient(
+      135deg,
+      var(--color-primary-overlay-light),
+      var(--color-primary-overlay-dark)
+    ),
     url("assets/images/iguazu.jpg");
   background-attachment: fixed;
 }
 
 .card-mendoza .card-image {
   background-image:
-    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    linear-gradient(
+      135deg,
+      var(--color-primary-overlay-light),
+      var(--color-primary-overlay-dark)
+    ),
     url("assets/images/mendoza.jpg");
   background-attachment: fixed;
 }
 
 .card-bariloche .card-image {
   background-image:
-    linear-gradient(135deg, rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)),
+    linear-gradient(
+      135deg,
+      var(--color-primary-overlay-light),
+      var(--color-primary-overlay-dark)
+    ),
     url("assets/images/bariloche.jpg");
   background-attachment: fixed;
 }
@@ -137,34 +165,26 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.6) 100%
-  );
+  background: var(--overlay-card-light);
   z-index: 2;
-  transition: all 0.4s ease-out;
+  transition: all var(--timing-card-hover) var(--easing-ease-out);
 }
 
 .card:hover .card-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  background: var(--overlay-card-dark);
 }
 
 /* Contenido de la tarjeta */
 .card-content {
   position: relative;
-  z-index: 3;
-  padding: 2rem;
+  z-index: var(--z-content);
+  padding: var(--spacing-lg);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   height: 100%;
-  color: white;
-  transition: all 0.4s ease-out;
+  color: var(--color-white);
+  transition: all var(--timing-card-hover) var(--easing-ease-out);
   transform: translateY(30px);
   opacity: 0.8;
 }
@@ -176,32 +196,33 @@
 
 /* Título de la tarjeta */
 .card-title {
-  font-size: 2rem;
+  font-size: var(--font-size-3xl);
   font-weight: 700;
   margin-bottom: 0.75rem;
-  transition: all 0.3s ease-out;
+  transition: all var(--timing-hover) var(--easing-ease-out);
   letter-spacing: 1px;
 }
 
 .card:hover .card-title {
-  color: #4fc3f7;
-  text-shadow: 0 2px 10px rgba(79, 195, 247, 0.5);
+  color: var(--color-accent);
+  text-shadow: 0 2px 10px var(--color-accent-transparent);
 }
 
 /* Descripción */
 .card-description {
-  font-size: 0.95rem;
+  font-size: var(--font-size-sm);
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--spacing-md);
   opacity: 0.95;
-  transition: all 0.3s ease-out;
+  transition: all var(--timing-hover) var(--easing-ease-out);
   max-height: 0;
   overflow: hidden;
 }
 
 .card:hover .card-description {
   max-height: 200px;
-  animation: slideIn 0.4s ease-out 0.1s both;
+  animation: slideIn var(--timing-card-hover) var(--easing-ease-out)
+    var(--timing-delay-1) both;
 }
 
 @keyframes slideIn {
@@ -220,13 +241,13 @@
   display: inline-block;
   padding: 0;
   margin: 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--color-white);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-sm);
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease-out;
+  transition: all var(--timing-hover) var(--easing-ease-out);
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.85rem;
@@ -237,8 +258,9 @@
 .card:hover .card-btn {
   max-height: 50px;
   padding: 0.8rem 1.5rem;
-  animation: slideUp 0.4s ease-out 0.2s both;
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+  animation: slideUp var(--timing-card-hover) var(--easing-ease-out)
+    var(--timing-delay-2) both;
+  box-shadow: var(--shadow-primary);
 }
 
 @keyframes slideUp {
@@ -254,8 +276,8 @@
 
 .card-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
-  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  box-shadow: var(--shadow-primary-lg);
+  background: var(--gradient-primary-reverse);
 }
 
 .card-btn:active {
@@ -302,23 +324,23 @@
    ========================================== */
 
 .card {
-  animation: cardIn 0.6s ease-out both;
+  animation: cardIn var(--timing-animation) var(--easing-ease-out) both;
 }
 
 .card:nth-child(1) {
-  animation-delay: 0.1s;
+  animation-delay: var(--timing-delay-1);
 }
 
 .card:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: var(--timing-delay-2);
 }
 
 .card:nth-child(3) {
-  animation-delay: 0.3s;
+  animation-delay: var(--timing-delay-3);
 }
 
 .card:nth-child(4) {
-  animation-delay: 0.4s;
+  animation-delay: var(--timing-delay-4);
 }
 
 .card:nth-child(5) {
@@ -328,6 +350,7 @@
 .card:nth-child(6) {
   animation-delay: 0.6s;
 }
+
 @keyframes cardIn {
   from {
     opacity: 0;
