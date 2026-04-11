@@ -1,8 +1,3 @@
-/* ==========================================
-   FOOTER COMPONENT
-   Pie de página con suscripción, redes sociales y mapa
-   ========================================== */
-
 @import url("../base/variables.css");
 
 /* ========== CONTENEDOR PRINCIPAL DEL FOOTER ========== */
@@ -177,7 +172,6 @@ footer {
 /* ========== SEPARADORES DENTRO DEL FOOTER ========== */
 .footer-divider {
   width: 100%;
-  height: 1px;
   background: var(--color-white-transparent-1);
   margin: var(--spacing-lg) 0;
 }
