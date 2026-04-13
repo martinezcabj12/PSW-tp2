@@ -1,4 +1,5 @@
 @import url("base/variables.css");
+@import url("layout.css");
 
 /* Componentes */
 @import url("components/navbar.css");
@@ -7,3 +8,7 @@
 @import url("components/stats.css");
 @import url("components/testimonials.css");
 @import url("components/footer.css");
+
+main {
+  padding: var(--spacing-2xl) var(--spacing-lg);
+}

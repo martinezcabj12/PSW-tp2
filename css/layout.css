@@ -1,0 +1,31 @@
+@import url("./base/variables.css");
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-dark);
+  background: var(--color-white);
+}
+
+header {
+  flex-shrink: 0;
+  width: 100%;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+footer {
+  flex-shrink: 0;
+  width: 100%;
+}
