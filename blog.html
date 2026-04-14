@@ -33,7 +33,325 @@
     </header>
 
     <!-- Contenido Principal -->
-    <main class="destination-main"></main>
+    <main class="destination-main">
+      <section class="blog-section">
+        <!-- ── Radio inputs ocultos para el filtrado CSS ── -->
+        <input
+          type="radio"
+          name="blog-filter"
+          id="filter-all"
+          class="blog-filter-input"
+          checked
+        />
+        <input
+          type="radio"
+          name="blog-filter"
+          id="filter-naturaleza"
+          class="blog-filter-input"
+        />
+        <input
+          type="radio"
+          name="blog-filter"
+          id="filter-cultural"
+          class="blog-filter-input"
+        />
+        <input
+          type="radio"
+          name="blog-filter"
+          id="filter-aventura"
+          class="blog-filter-input"
+        />
+        <input
+          type="radio"
+          name="blog-filter"
+          id="filter-gastronomia"
+          class="blog-filter-input"
+        />
+
+        <!-- ── Encabezado estilo periódico ── -->
+        <header class="blog-header">
+          <h1 class="blog-title">TurArg <span>Blog</span></h1>
+          <p class="blog-subtitle">
+            Historias, paisajes y sabores del norte argentino
+          </p>
+          <!--<p class="blog-date-line">Jujuy · Argentina · Edición 2024</p>-->
+        </header>
+
+        <!-- ── Filtros de categoría ── -->
+        <div class="blog-filter-controls">
+          <label for="filter-all" class="filter-label">🗺️ Todos</label>
+          <label for="filter-naturaleza" class="filter-label"
+            >🏔️ Naturaleza</label
+          >
+          <label for="filter-cultural" class="filter-label">🏛️ Cultural</label>
+          <label for="filter-aventura" class="filter-label">🥾 Aventura</label>
+          <label for="filter-gastronomia" class="filter-label"
+            >🍽️ Gastronomía</label
+          >
+        </div>
+
+        <!-- ══════════════════════════════════════
+             NEWSPAPER GRID
+             Layout (3 columnas):
+             [ FEATURED 2×2     ] [ Art-2 ]
+             [                  ] [ Art-3 ]
+             [ WIDE 2×1         ] [ Art-5 ]
+             ══════════════════════════════════════ -->
+        <div class="blog-grid">
+          <!-- Art-1: FEATURED · Naturaleza -->
+          <article class="blog-card blog-card--featured cat-naturaleza">
+            <div class="blog-card__image blog-img--naturaleza">
+              <span class="blog-card__category">Naturaleza</span>
+              <span class="blog-card__read-time">⏱ 8 min</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <time>15 Mar 2024</time>
+                <span class="meta-sep">·</span>
+                <span>por Ana Gómez</span>
+              </div>
+              <h2 class="blog-card__title">
+                La Quebrada de Humahuaca: Patrimonio Vivo de la Humanidad
+              </h2>
+              <p class="blog-card__excerpt">
+                A lo largo de 155 km de paisajes hipnóticos, la Quebrada de
+                Humahuaca guarda siglos de historia, cultura andina y una paleta
+                de colores que ningún pintor podría reproducir. Cada pueblo,
+                cada cerro y cada amanecer con niebla es una historia nueva que
+                espera ser contada. La UNESCO no se equivocó al elegirla
+                Patrimonio de la Humanidad en 2003.
+              </p>
+              <div class="blog-card__tags">
+                <span class="blog-tag">#Jujuy</span>
+                <span class="blog-tag">#UNESCO</span>
+                <span class="blog-tag">#Quebrada</span>
+              </div>
+              <a href="#" class="blog-card__link">Leer artículo completo →</a>
+            </div>
+          </article>
+
+          <!-- Art-2: Cultural -->
+          <article class="blog-card cat-cultural">
+            <div class="blog-card__image blog-img--cultural">
+              <span class="blog-card__category">Cultural</span>
+              <span class="blog-card__read-time">⏱ 5 min</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <time>10 Mar 2024</time>
+                <span class="meta-sep">·</span>
+                <span>por Luis Ríos</span>
+              </div>
+              <h3 class="blog-card__title">
+                Pucará de Tilcara: 2.500 Años de Historia Precolombina
+              </h3>
+              <div class="blog-card__tags">
+                <span class="blog-tag">#Tilcara</span>
+                <span class="blog-tag">#Historia</span>
+                <span class="blog-tag">#Arqueología</span>
+              </div>
+              <a href="#" class="blog-card__link">Leer más →</a>
+            </div>
+          </article>
+
+          <!-- Art-3: Gastronomía -->
+          <article class="blog-card cat-gastronomia">
+            <div class="blog-card__image blog-img--gastronomia">
+              <span class="blog-card__category">Gastronomía</span>
+              <span class="blog-card__read-time">⏱ 4 min</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <time>5 Mar 2024</time>
+                <span class="meta-sep">·</span>
+                <span>por Carla Medina</span>
+              </div>
+              <h3 class="blog-card__title">
+                Humitas, Tamales y Locro: El Alma Gastronómica de Jujuy
+              </h3>
+              <div class="blog-card__tags">
+                <span class="blog-tag">#Comida</span>
+                <span class="blog-tag">#Tradición</span>
+              </div>
+              <a href="#" class="blog-card__link">Leer más →</a>
+            </div>
+          </article>
+
+          <!-- Art-4: WIDE · Aventura -->
+          <article class="blog-card blog-card--wide cat-aventura">
+            <div class="blog-card__image blog-img--aventura">
+              <span class="blog-card__category">Aventura</span>
+              <span class="blog-card__read-time">⏱ 10 min</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <time>1 Mar 2024</time>
+                <span class="meta-sep">·</span>
+                <span>por Marcos Vidal</span>
+              </div>
+              <h3 class="blog-card__title">
+                Iruya: El Pueblo Perdido en las Nubes de la Montaña
+              </h3>
+              <p class="blog-card__excerpt">
+                A 3.600 metros de altura, cruzando ríos y quebradas imposibles,
+                existe un pueblo que el tiempo olvidó. Iruya sólo se alcanza en
+                4x4 o a pie, y eso forma parte de su magia indescriptible para
+                todo amante de la aventura y el silencio.
+              </p>
+              <div class="blog-card__tags">
+                <span class="blog-tag">#Iruya</span>
+                <span class="blog-tag">#Trekking</span>
+                <span class="blog-tag">#4x4</span>
+              </div>
+              <a href="#" class="blog-card__link">Leer artículo completo →</a>
+            </div>
+          </article>
+
+          <!-- Art-5: Naturaleza -->
+          <article class="blog-card cat-naturaleza">
+            <div class="blog-card__image blog-img--naturaleza">
+              <span class="blog-card__category">Naturaleza</span>
+              <span class="blog-card__read-time">⏱ 6 min</span>
+            </div>
+            <div class="blog-card__body">
+              <div class="blog-card__meta">
+                <time>25 Feb 2024</time>
+                <span class="meta-sep">·</span>
+                <span>por Ana Gómez</span>
+              </div>
+              <h3 class="blog-card__title">
+                Salinas Grandes: Un Mar Blanco en el Altiplano Jujeño
+              </h3>
+              <div class="blog-card__tags">
+                <span class="blog-tag">#Salinas</span>
+                <span class="blog-tag">#Altiplano</span>
+              </div>
+              <a href="#" class="blog-card__link">Leer más →</a>
+            </div>
+          </article>
+        </div>
+        <!-- /blog-grid -->
+
+        <!-- ── Separador tipo diario ── -->
+        <div class="blog-section-divider">
+          <span>Comentarios de Viajeros</span>
+        </div>
+
+        <!-- ══════════════════════════════════════
+             SECCIÓN DE COMENTARIOS
+             Avatares CSS puro con ::before/::after
+             ══════════════════════════════════════ -->
+        <div class="blog-comments">
+          <h3 class="blog-comments__title" data-count="3">💬 Comentarios</h3>
+
+          <div class="comments-list">
+            <!-- Comentario 1 — avatar con verificado (::after) -->
+            <div class="comment">
+              <div
+                class="comment__avatar comment__avatar--verified"
+                data-initials="MP"
+              ></div>
+              <div class="comment__body">
+                <div class="comment__header">
+                  <span class="comment__name">María Pérez</span>
+                  <time class="comment__date">12 Mar 2024</time>
+                </div>
+                <p class="comment__text">
+                  ¡La Quebrada de Humahuaca es absolutamente mágica! Fuimos en
+                  enero y los colores al atardecer son de otro mundo. El
+                  artículo captura perfectamente esa sensación. Muy recomendable
+                  el tour con TurArg, la organización fue impecable.
+                </p>
+                <div class="comment__reactions">
+                  <button class="comment__like">♥ 24</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comentario 2 -->
+            <div class="comment">
+              <div class="comment__avatar" data-initials="RC"></div>
+              <div class="comment__body">
+                <div class="comment__header">
+                  <span class="comment__name">Roberto Cabrera</span>
+                  <time class="comment__date">8 Mar 2024</time>
+                </div>
+                <p class="comment__text">
+                  Hicimos el trek a Iruya el mes pasado. Es desafiante pero cada
+                  paso vale la pena. El pueblo tiene una paz que no encontrás en
+                  ningún otro lugar de Argentina. ¡Volvería sin dudarlo! El guía
+                  que nos asignaron conocía cada rincón de la montaña.
+                </p>
+                <div class="comment__reactions">
+                  <button class="comment__like">♥ 18</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Comentario 3 -->
+            <div class="comment">
+              <div class="comment__avatar" data-initials="LT"></div>
+              <div class="comment__body">
+                <div class="comment__header">
+                  <span class="comment__name">Laura Torres</span>
+                  <time class="comment__date">2 Mar 2024</time>
+                </div>
+                <p class="comment__text">
+                  La gastronomía jujeña es increíble. Las humitas que comimos en
+                  el mercado de Tilcara fueron las mejores de mi vida. ¿Alguien
+                  sabe si hay algún tour gastronómico disponible con TurArg? ¡Me
+                  interesa mucho para el próximo viaje!
+                </p>
+                <div class="comment__reactions">
+                  <button class="comment__like">♥ 11</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /comments-list -->
+
+          <!-- ── Formulario de comentario ── -->
+          <form class="comment-form">
+            <h4 class="comment-form__title">Dejá tu comentario</h4>
+            <div class="comment-form__fields">
+              <div class="comment-form__group">
+                <label for="comment-name">Nombre</label>
+                <input
+                  type="text"
+                  id="comment-name"
+                  placeholder="Tu nombre completo"
+                />
+              </div>
+              <div class="comment-form__group">
+                <label for="comment-email">Email</label>
+                <input
+                  type="email"
+                  id="comment-email"
+                  placeholder="tu@email.com"
+                />
+              </div>
+              <div class="comment-form__group comment-form__group--full">
+                <label for="comment-text">Mensaje</label>
+                <textarea
+                  id="comment-text"
+                  rows="4"
+                  placeholder="¿Qué te pareció el artículo? ¿Visitaste este destino?"
+                ></textarea>
+              </div>
+            </div>
+            <div class="comment-form__footer">
+              <button type="submit" class="comment-form__submit">
+                Publicar comentario
+              </button>
+              <span class="comment-form__note">
+                Tu email no será publicado.
+              </span>
+            </div>
+          </form>
+        </div>
+        <!-- /blog-comments -->
+      </section>
+    </main>
 
     <!-- Pie de página -->
     <footer>
