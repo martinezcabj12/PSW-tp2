@@ -22,9 +22,10 @@ Legajo: APU004455
 │   │   └── buttons.css     (Estilos globales de botones)
 │   ├── layout.css          (Estructura de contenedores y grid)
 │   ├── pages/
-│   │   ├── home.css
-│   │   ├── about.css
-│   │   ├── portfolio.css
+│   │   ├── agencia.css
+│   │   ├── blog.css
+│   │   ├── destino.css
+│   │   ├── precios.css
 │   │   └── contact.css
 │   └── main.css            (Archivo central que importa los demás, si usas @import)
 ├── assets/
