@@ -90,13 +90,13 @@
   margin: 0 0 var(--spacing-sm);
 }
 
-/*.blog-date-line {
+.blog-date-line {
   font-size: var(--font-size-xs);
   color: var(--color-gray);
   letter-spacing: 3px;
   text-transform: uppercase;
   margin: 0 100px var(--spacing-sm);
-}*/
+}
 
 /* ========================================
    CONTROLES DE FILTRO (labels → radios)
@@ -285,7 +285,7 @@
 
 .blog-card--wide .blog-card__excerpt {
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  /*-webkit-line-clamp: 3;*/
   -webkit-box-orient: vertical;
   overflow: hidden;
 }

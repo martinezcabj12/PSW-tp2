@@ -34,6 +34,10 @@ header {
     text-shadow var(--timing-hover) ease;
 }
 
+.title-logo {
+  color: var(--color-white);
+}
+
 .logo-container:hover {
   transform: scale(1.05);
   text-shadow: 0 0 8px var(--color-white-transparent-3);
@@ -44,14 +48,6 @@ header {
   width: 35px;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px var(--color-black-transparent-1));
-}
-
-.logo-container p {
-  margin: 0;
-  background: var(--gradient-text-white);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 /* Alineación del menú principal */
