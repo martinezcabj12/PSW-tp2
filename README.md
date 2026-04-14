@@ -1,7 +1,11 @@
 # PSW-tp2
 Trabajo Practico N2
-Alumno: Darío Abel Martinez
-Legajo: APU004455
+Integrante: 
+- Darío Abel Martinez
+- Christian Rene Guari
+- Alvarez Mateo Alberto
+- Orellana, Cristian Maximiliano
+- Saravia Noemí Ayelén
 
 ## Estructura del Proyecto
 
