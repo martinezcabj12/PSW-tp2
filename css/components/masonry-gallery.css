@@ -1,0 +1,45 @@
+@import url("../base/variables.css");
+
+.masonry-grid {
+  display: grid;
+  /* Definimos 3 columnas iguales (puedes ajustarlo) */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* El truco: filas muy pequeñas para que los spans sean precisos */
+  grid-auto-rows: 10px;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.masonry-item {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: transform var(--timing-hover) ease;
+}
+
+.masonry-item:hover {
+  transform: scale(1.02);
+  z-index: 10;
+}
+
+.masonry-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ========== VARIACIONES DE ALTURA ========== */
+/* Controlamos cuántas "micro-filas" de 10px ocupa cada tarjeta */
+
+.item-short {
+  grid-row: span 15; /* ~150px + gaps */
+}
+
+.item-medium {
+  grid-row: span 25; /* ~250px + gaps */
+}
+
+.item-tall {
+  grid-row: span 40; /* ~400px + gaps */
+}
