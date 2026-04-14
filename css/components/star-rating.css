@@ -1,0 +1,69 @@
+/* ========== SISTEMA DE RATING (CSS ONLY) ========== */
+
+.rating-container {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-sm) 0;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse; /* Clave para el funcionamiento del selector ~ */
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Ocultamos los radios originales */
+.star-rating input {
+  display: none;
+}
+
+/* Estilo base de las estrellas */
+.star-rating label {
+  font-size: var(--font-size-2xl);
+  color: var(--color-gray-gradient); /* Color de estrella vacía */
+  cursor: pointer;
+  transition:
+    color var(--timing-hover) ease,
+    transform var(--timing-hover) var(--easing-default),
+    text-shadow var(--timing-hover) ease;
+}
+
+/* ========== ANIMACIONES Y ESTADOS ========== */
+
+/* 1. Al pasar el mouse (Hover) y estrellas anteriores */
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: var(--color-accent);
+  transform: scale(1.2) rotate(10deg);
+  text-shadow: 0 0 10px var(--color-accent-transparent);
+}
+
+/* 2. Al seleccionar (Checked) y estrellas anteriores */
+.star-rating input:checked ~ label {
+  color: var(--color-accent-dark);
+  text-shadow: 0 0 15px var(--color-accent-transparent-8);
+}
+
+/* 3. Animación de "latido" al clickear */
+.star-rating input:checked + label {
+  animation: star-bounce 0.4s var(--easing-default);
+}
+
+@keyframes star-bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/* ========== AJUSTE PARA TARJETAS ========== */
+/* Si lo usas dentro de una flip-card o info-card, reducimos el tamaño */
+.info-card .star-rating label {
+  font-size: var(--font-size-lg);
+}
