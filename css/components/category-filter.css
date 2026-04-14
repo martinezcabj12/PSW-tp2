@@ -1,0 +1,160 @@
+@import url("../base/variables.css");
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
+.category-filter-container {
+  width: 100%;
+  margin-bottom: var(--spacing-xl);
+}
+
+/* ========== TÍTULO DEL FILTRO ========== */
+.filter-title {
+  color: var(--color-dark);
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-3xl);
+  font-weight: 700;
+  margin: 10px 0 10px var(--spacing-sm);
+}
+
+/* ========== RADIO BUTTONS OCULTOS ========== */
+.category-checkbox {
+  display: none;
+}
+
+========== CONTROLES DE FILTRO ========== .filter-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  flex-wrap: wrap;
+}
+
+/* ========== ETIQUETAS DE CATEGORÍAS ========== */
+.category-label {
+  margin-left: 30px;
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  border: var(--border-width) solid var(--color-gray);
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  transition: all var(--timing-hover) ease;
+  user-select: none;
+}
+
+.category-label:hover {
+  background-color: var(--color-accent-light);
+  border-color: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-light);
+}
+
+/* ========== GRID DE DESTINOS ========== */
+.destinations-grid {
+  display: flex;
+  flex-direction: row;
+  /* grid-template-columns: repeat(3, 1fr); */
+  gap: var(--spacing-lg);
+}
+
+/* ========== TARJETA DE DESTINO ========== */
+.destination-card {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: all var(--timing-card-hover) ease;
+  display: none;
+  width: 350px;
+  height: 450px;
+  margin: 40px;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* ========== IMAGEN DEL DESTINO ========== */
+.destination-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  background-color: var(--color-gray);
+}
+
+/* ========== CONTENIDO DE DESTINO ========== */
+.destination-content {
+  padding: var(--spacing-md);
+}
+
+.destination-title {
+  font-size: var(--font-size-lg);
+  color: var(--color-dark);
+  margin: 0 0 var(--spacing-sm) 0;
+  font-weight: bold;
+}
+
+.destination-category {
+  display: inline-block;
+  font-size: var(--font-size-xs);
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+}
+
+.destination-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray);
+  line-height: 1.5;
+  margin: 0;
+}
+
+#cultural:checked
+  ~ .destinations-grid
+  .destination-card[data-category="cultural"] {
+  display: block;
+}
+
+/* NATURALEZA - Mostrar cuando #naturaleza está checked */
+#naturaleza:checked
+  ~ .destinations-grid
+  .destination-card[data-category="naturaleza"] {
+  display: block;
+}
+
+/* SOL Y PLAYA - Mostrar cuando #solplaya está checked */
+#solplaya:checked
+  ~ .destinations-grid
+  .destination-card[data-category="solplaya"] {
+  display: block;
+}
+
+/* GASTRONÓMICO - Mostrar cuando #gastronomico está checked */
+#gastronomico:checked
+  ~ .destinations-grid
+  .destination-card[data-category="gastronomico"] {
+  display: block;
+}
+
+/* RELIGIOSO - Mostrar cuando #religioso está checked */
+#religioso:checked
+  ~ .destinations-grid
+  .destination-card[data-category="religioso"] {
+  display: block;
+}
+
+#cultural:checked ~ .filter-controls .category-label[for="cultural"],
+#naturaleza:checked ~ .filter-controls .category-label[for="naturaleza"],
+#solplaya:checked ~ .filter-controls .category-label[for="solplaya"],
+#gastronomico:checked ~ .filter-controls .category-label[for="gastronomico"],
+#religioso:checked ~ .filter-controls .category-label[for="religioso"] {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-primary);
+}
