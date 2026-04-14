@@ -7,6 +7,9 @@ Integrante:
 - Orellana, Cristian Maximiliano
 - Saravia Noemí Ayelén
 
+Deploy: https://martinezcabj12.github.io/PSW-tp2/
+Drive video: https://drive.google.com/drive/folders/1qTIPYF_AFvG9pyIs-d5gs177GsWEyFM-
+
 ## Estructura del Proyecto
 
 ```shell
