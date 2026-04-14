@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/pages/precios.css" />
+    <title>Destino - TurArg</title>
+  </head>
+  <body>
+    <!-- Encabezado -->
+    <header>
+      <nav class="navbar">
+        <ul class="nav-links">
+          <a href="index.html" class="logo-container">
+            <img
+              src="assets/images/TurArg-logo.webp"
+              alt="Logo de Turi-Arg"
+              title="Turi-Arg"
+              class="logo"
+            />
+            <p class="">TurArg</p>
+          </a>
+          <li class="dropdown">
+            <a href="#">Menu</a>
+            <ul class="dropdown-menu">
+              <li><a href="destino.html">Destino</a></li>
+              <li><a href="#">Agencia</a></li>
+              <li><a href="#">Precio</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="destination-main">
+      <section class="comparador-section">
+        <!-- Encabezado -->
+        <div class="comparador-header">
+          <h2 class="comparador-title">Comparador de <span>Destinos</span></h2>
+          <p class="comparador-subtitle">
+            Encontrá el plan perfecto para tu próxima aventura en Jujuy
+          </p>
+        </div>
+
+        <!-- Leyenda -->
+        <div class="comparador-legend">
+          <span class="legend-item">
+            <span class="legend-dot legend-popular"></span> Más Popular
+          </span>
+          <span class="legend-item">
+            <span class="legend-dot legend-premium"></span> Premium
+          </span>
+        </div>
+
+        <!-- Tabla comparadora -->
+        <div class="comparador-wrapper">
+          <table class="comparador-table">
+            <thead>
+              <tr>
+                <th>Destino</th>
+                <th>Categoría</th>
+                <th>Duración</th>
+                <th>Incluye</th>
+                <th>Precio</th>
+                <th>Reservar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Fila 1: Purmamarca -->
+              <tr>
+                <td>
+                  <div class="destino-info">
+                    <span class="destino-emoji">🏔️</span>
+                    <div class="destino-meta">
+                      <span class="destino-nombre">Purmamarca</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge-categoria badge-naturaleza"
+                    >Naturaleza</span
+                  >
+                </td>
+                <td>Full Day</td>
+                <td>
+                  <ul class="incluye-list">
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Traslado de ida y vuelta desde tu hotel"
+                        >🚌 Traslado</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Almuerzo en restaurante local con platos típicos jujeños"
+                        >🍽️ Almuerzo</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Guía turístico certificado durante todo el recorrido"
+                        >👤 Guía</span
+                      >
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <span class="precio-amount">$45.000</span>
+                  <span class="precio-por-persona">/ persona</span>
+                </td>
+                <td>
+                  <button class="btn-reservar">Reservar</button>
+                </td>
+              </tr>
+
+              <!-- Fila 2: Salinas Grandes -->
+              <tr>
+                <td>
+                  <div class="destino-info">
+                    <span class="destino-emoji">🧂</span>
+                    <div class="destino-meta">
+                      <span class="destino-nombre">Salinas Grandes</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge-categoria badge-naturaleza"
+                    >Naturaleza</span
+                  >
+                </td>
+                <td>12 horas</td>
+                <td>
+                  <ul class="incluye-list">
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Traslado de ida y vuelta desde tu hotel"
+                        >🚌 Traslado</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Snack y bebidas durante el recorrido por las salinas"
+                        >🥤 Snack</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Guía turístico certificado durante todo el recorrido"
+                        >👤 Guía</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Sesión de fotos aéreas con dron incluida"
+                        >📸 Foto aérea</span
+                      >
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <span class="precio-amount">$55.000</span>
+                  <span class="precio-por-persona">/ persona</span>
+                </td>
+                <td>
+                  <button class="btn-reservar">Reservar</button>
+                </td>
+              </tr>
+
+              <!-- Fila 3: Tilcara y Pucará -->
+              <tr>
+                <td>
+                  <div class="destino-info">
+                    <span class="destino-emoji">🏛️</span>
+                    <div class="destino-meta">
+                      <span class="destino-nombre">Tilcara y Pucará</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge-categoria badge-cultural">Cultural</span>
+                </td>
+                <td>Full Day</td>
+                <td>
+                  <ul class="incluye-list">
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Traslado de ida y vuelta desde tu hotel"
+                        >🚌 Traslado</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Entrada al museo arqueológico y al Pucará de Tilcara"
+                        >🎟️ Entradas</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Guía turístico especializado en historia y arqueología"
+                        >👤 Guía</span
+                      >
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <span class="precio-amount">$38.000</span>
+                  <span class="precio-por-persona">/ persona</span>
+                </td>
+                <td>
+                  <button class="btn-reservar">Reservar</button>
+                </td>
+              </tr>
+
+              <!-- Fila 4: Quebrada de Humahuaca — POPULAR -->
+              <tr class="row-popular">
+                <td>
+                  <div class="destino-info">
+                    <span class="destino-emoji">🗻</span>
+                    <div class="destino-meta">
+                      <span class="tag-popular">⭐ Más popular</span>
+                      <span class="destino-nombre">Quebrada de Humahuaca</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge-categoria badge-cultural">Cultural</span>
+                </td>
+                <td>2 Días</td>
+                <td>
+                  <ul class="incluye-list">
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Traslado de ida y vuelta desde tu hotel"
+                        >🚌 Traslado</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Una noche en hostal con desayuno incluido"
+                        >🏨 Alojamiento</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Desayuno típico norteño cada mañana"
+                        >☕ Desayuno</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Guía turístico certificado Patrimonio UNESCO"
+                        >👤 Guía</span
+                      >
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <span class="precio-amount">$89.000</span>
+                  <span class="precio-por-persona">/ persona</span>
+                </td>
+                <td>
+                  <button class="btn-reservar">Reservar</button>
+                </td>
+              </tr>
+
+              <!-- Fila 5: Termas de Reyes -->
+              <tr>
+                <td>
+                  <div class="destino-info">
+                    <span class="destino-emoji">♨️</span>
+                    <div class="destino-meta">
+                      <span class="destino-nombre">Termas de Reyes</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge-categoria badge-relax">Relax</span>
+                </td>
+                <td>Medio Día</td>
+                <td>
+                  <ul class="incluye-list">
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Traslado de ida y vuelta desde tu hotel"
+                        >🚌 Traslado</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Acceso ilimitado a todas las piletas termales"
+                        >🌊 Termas</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Toalla y kit de bienvenida incluidos"
+                        >🛁 Kit</span
+                      >
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <span class="precio-amount">$32.000</span>
+                  <span class="precio-por-persona">/ persona</span>
+                </td>
+                <td>
+                  <button class="btn-reservar">Reservar</button>
+                </td>
+              </tr>
+
+              <!-- Fila 6: Iruya — PREMIUM -->
+              <tr class="row-premium">
+                <td>
+                  <div class="destino-info">
+                    <span class="destino-emoji">🥾</span>
+                    <div class="destino-meta">
+                      <span class="tag-premium">✦ Premium</span>
+                      <span class="destino-nombre">Iruya</span>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <span class="badge-categoria badge-aventura">Aventura</span>
+                </td>
+                <td>3 Días</td>
+                <td>
+                  <ul class="incluye-list">
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Traslado en 4x4 por caminos de montaña"
+                        >🚙 4x4</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="2 noches en hostería boutique con vista a la quebrada"
+                        >🏨 Alojamiento</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Pensión completa: desayuno, almuerzo y cena"
+                        >🍽️ Pensión</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Guía de trekking certificado con equipo de emergencia"
+                        >👤 Guía</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        class="tooltip-item"
+                        data-tooltip="Seguro de viaje y asistencia médica incluidos"
+                        >🛡️ Seguro</span
+                      >
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <span class="precio-amount">$145.000</span>
+                  <span class="precio-por-persona">/ persona</span>
+                </td>
+                <td>
+                  <button class="btn-reservar">Reservar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Nota -->
+        <p class="comparador-nota">
+          * Precios en pesos argentinos. Sujetos a disponibilidad y temporada.
+        </p>
+      </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+      <div class="footer-container">
+        <!-- Sección Newsletter -->
+        <div class="footer-section-newsletter">
+          <h3 class="footer-newsletter-title">Newsletter</h3>
+          <p class="footer-newsletter-description">
+            Suscríbete para recibir las mejores ofertas y promociones sobre
+            destinos turísticos en Argentina.
+          </p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico" required />
+            <button type="submit">Suscribirse</button>
+          </form>
+        </div>
+
+        <!-- Sección Redes Sociales -->
+        <div class="footer-section-social">
+          <h3 class="footer-social-title">Síguenos</h3>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Facebook">f</a>
+            <a href="#" class="social-link" title="Twitter">𝕏</a>
+            <a href="#" class="social-link" title="Instagram">📷</a>
+            <a href="#" class="social-link" title="LinkedIn">in</a>
+            <a href="#" class="social-link" title="YouTube">▶</a>
+          </div>
+        </div>
+
+        <!-- Sección Mapa Interactivo -->
+        <div class="footer-section-map">
+          <h3 class="footer-map-title">Ubicación</h3>
+          <div class="map-container">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-73.5,-56.0,-53.6,-21.8&layer=mapnik&marker=-38.4161,-63.6167"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2024 <strong>TurArg</strong>. Todos los derechos reservados.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

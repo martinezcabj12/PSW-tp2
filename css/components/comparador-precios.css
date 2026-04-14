@@ -1,0 +1,438 @@
+/* =============================================
+   COMPARADOR DE PRECIOS
+   Consigna:
+   - Tabla con efecto de resaltado al hover
+   - Tooltips CSS (data-tooltip + ::before/::after)
+   - Diseño responsivo con Flexbox y Grid
+   ============================================= */
+
+/* ========== SECCIÓN PRINCIPAL ========== */
+.comparador-section {
+  max-width: var(--max-width-container);
+  margin: var(--spacing-2xl) auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ========== ENCABEZADO ========== */
+.comparador-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.comparador-title {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin: 0 0 var(--spacing-xs);
+  line-height: 1.2;
+}
+
+.comparador-title span {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.comparador-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray);
+  margin: 0;
+}
+
+/* ========== LEYENDA ========== */
+.comparador-legend {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-popular {
+  background: var(--gradient-primary);
+}
+
+.legend-premium {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+/* ========== WRAPPER (scroll horizontal en mobile) ========== */
+.comparador-wrapper {
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-dark);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ========== TABLA PRINCIPAL ========== */
+.comparador-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-white);
+  min-width: 720px;
+}
+
+/* ========== CABECERA DE LA TABLA ========== */
+.comparador-table thead tr {
+  background: var(--gradient-primary);
+}
+
+.comparador-table th {
+  padding: var(--spacing-md) var(--spacing-sm);
+  text-align: left;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  white-space: nowrap;
+}
+
+.comparador-table th:last-child {
+  text-align: center;
+}
+
+/* ========== CUERPO DE LA TABLA ========== */
+.comparador-table tbody tr {
+  border-bottom: 1px solid var(--color-light-gray);
+  transition:
+    background var(--timing-hover) ease,
+    box-shadow var(--timing-hover) ease;
+  cursor: default;
+}
+
+/* Zebra striping sutil */
+.comparador-table tbody tr:nth-child(even) {
+  background-color: rgba(245, 247, 250, 0.6);
+}
+
+/* ===== EFECTO DE RESALTADO AL PASAR EL CURSOR ===== */
+.comparador-table tbody tr:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(102, 126, 234, 0.08) 0%,
+    rgba(118, 75, 162, 0.08) 100%
+  ) !important;
+  box-shadow: inset 4px 0 0 var(--color-primary);
+}
+
+.comparador-table td {
+  padding: var(--spacing-md) var(--spacing-sm);
+  vertical-align: middle;
+  font-size: var(--font-size-sm);
+  color: var(--color-dark);
+  overflow: visible;
+}
+
+.comparador-table td:last-child {
+  text-align: center;
+}
+
+/* ========== FILA POPULAR ========== */
+.row-popular {
+  background: rgba(102, 126, 234, 0.04) !important;
+  border-left: 4px solid var(--color-primary) !important;
+}
+
+.row-popular:hover {
+  border-left-color: var(--color-primary-dark) !important;
+}
+
+/* ========== FILA PREMIUM ========== */
+.row-premium {
+  background: rgba(253, 160, 133, 0.04) !important;
+  border-left: 4px solid #fda085 !important;
+}
+
+/* ========== CELDA: DESTINO ========== */
+.destino-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.destino-emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.destino-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.destino-nombre {
+  font-weight: 700;
+  color: var(--color-dark);
+  line-height: 1.2;
+}
+
+/* Tags de fila especial */
+.tag-popular,
+.tag-premium {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--border-radius-lg);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.tag-popular {
+  background: var(--gradient-primary);
+  color: var(--color-white);
+}
+
+.tag-premium {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  color: #7a3800;
+}
+
+/* ========== CELDA: BADGES DE CATEGORÍA ========== */
+.badge-categoria {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.badge-naturaleza {
+  background: rgba(67, 160, 71, 0.12);
+  color: #2e7d32;
+}
+
+.badge-cultural {
+  background: rgba(25, 118, 210, 0.12);
+  color: #1565c0;
+}
+
+.badge-aventura {
+  background: rgba(245, 124, 0, 0.12);
+  color: #e65100;
+}
+
+.badge-relax {
+  background: rgba(142, 36, 170, 0.12);
+  color: #6a1b9a;
+}
+
+/* ========== CELDA: INCLUYE + TOOLTIPS CSS ========== */
+.incluye-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.incluye-list li {
+  display: contents;
+}
+
+/* ===== TOOLTIPS CSS PURO (data-tooltip) ===== */
+.tooltip-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  background: var(--color-light-gray);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  cursor: help;
+  transition: var(--transition-all);
+  white-space: nowrap;
+  border-bottom: 1px dashed transparent;
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.tooltip-item:hover {
+  background: rgba(102, 126, 234, 0.12);
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Caja del tooltip */
+.tooltip-item::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: var(--color-dark);
+  color: var(--color-white);
+  font-size: 0.73rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 8px 12px;
+  border-radius: var(--border-radius-sm);
+  width: 175px;
+  text-align: center;
+  white-space: normal;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--timing-hover) ease,
+    transform var(--timing-hover) ease,
+    visibility var(--timing-hover) ease;
+  pointer-events: none;
+  z-index: var(--z-sticky);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Flecha apuntando hacia abajo (desde tooltip hacia el item) */
+.tooltip-item::after {
+  content: "";
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  border: 6px solid transparent;
+  border-top-color: var(--color-dark);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--timing-hover) ease,
+    transform var(--timing-hover) ease,
+    visibility var(--timing-hover) ease;
+  pointer-events: none;
+  z-index: var(--z-sticky);
+}
+
+/* Mostrar tooltip al hover */
+.tooltip-item:hover::before,
+.tooltip-item:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ========== CELDA: PRECIO ========== */
+.precio-amount {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  display: block;
+  white-space: nowrap;
+}
+
+.precio-por-persona {
+  font-size: var(--font-size-xs);
+  color: var(--color-gray);
+  display: block;
+}
+
+/* ========== BOTÓN RESERVAR ========== */
+.btn-reservar {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: var(--transition-all);
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.btn-reservar:hover {
+  box-shadow: var(--shadow-primary);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.btn-reservar:active {
+  transform: translateY(0) scale(1);
+  box-shadow: none;
+}
+
+/* ========== NOTA AL PIE ========== */
+.comparador-nota {
+  margin-top: var(--spacing-md);
+  font-size: var(--font-size-xs);
+  color: var(--color-gray);
+  text-align: right;
+  font-style: italic;
+}
+
+/* ========== RESPONSIVE ========== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .comparador-title {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* Tablet chico */
+@media (max-width: 768px) {
+  .comparador-section {
+    margin: var(--spacing-xl) auto;
+    padding: 0 var(--spacing-xs);
+  }
+
+  .comparador-header {
+    margin-bottom: var(--spacing-lg);
+    text-align: left;
+  }
+
+  .comparador-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .comparador-subtitle {
+    font-size: var(--font-size-base);
+  }
+
+  .comparador-legend {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .comparador-section {
+    margin: var(--spacing-lg) auto;
+  }
+
+  .comparador-nota {
+    text-align: left;
+  }
+}
+```
+
+Ahora sigo con las instrucciones del usuario para crear el page CSS y actualizar el HTML.
